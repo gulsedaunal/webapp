@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Gul Seda Unal | Video Violence Detection Engine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% include 'tmpHeaderCSS.html' %}
+	</head>
+	<body id="top">
+		<!-- Header -->
+			<header id="header">
+                {% include 'tmpHeaderLinks.html' %}
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+					<!-- Content -->
+						<header>
+							<h1>Crowd Violence Detection Engine</h1>
+							<p>Explain projects</p>
+						</header>
+						<p>This </p>
+						<div class="row">
+							<div class="6u 12u$(medium)">
+								<!-- Image -->
+                                <h3>Violent</h3>
+                                <div class="box alt">
+                                    <div class="row 50% uniform">
+                                        {% if vList is not none %}
+                                            {% for item in vList %}
+                                                <div class="4u"><span class="image fit">
+                                                    <a href="{{ url_for('vvd_detail', videoName=item.fileName) }}" target="_blank">
+                                                        <img src="{{ url_for('static', filename='images/violent/FRAMES/' + item.jpgFileName)}}" alt="" />
+                                                    </a>
+                                                </span></div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+							</div>
+                            <div class="6u 12u$(medium)" style="align: right;">
+								<!-- Image -->
+                                <h3>Non-Violent</h3>
+                                <div class="box alt">
+                                    <div class="row 50% uniform">
+                                        {% if nvList is not none %}
+                                            {% for item in nvList %}
+                                                <div class="4u"><span class="image fit">
+                                                    <a href="{{ url_for('vvd_detail', videoName=item.fileName) }}" target="_blank">
+                                                        <img src="{{ url_for('static', filename='images/nonviolent/FRAMES/' + item.jpgFileName)}}" alt="" />
+                                                    </a>
+                                                </span></div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+							</div>
+						</div>
+				</div>
+			</section>
+		    {% include 'tmpFooter.html' %}
+            {% include 'tmpHeaderJS.html' %}
+
+	</body>
+</html>

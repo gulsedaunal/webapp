@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Gul Seda Unal | Video Violence Detection Engine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% include 'tmpHeaderCSS.html' %}
+	</head>
+	<body id="top">
+		<!-- Header -->
+			<header id="header">
+                {% include 'tmpHeaderLinks.html' %}
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+					<!-- Content -->
+						<header>
+							<h1>Crowd Violence Detection Engine</h1>
+							<p>Video Detail</p>
+						</header>
+						<p>This </p>
+						<div class="row">
+							<div class="12u 12u$(medium)">
+								<!-- Image -->
+                                <h3>{{ cat }}</h3>
+                                <div class="box alt">
+                                    <div class="row 100% uniform">
+                                        {% if imageList is not none %}
+                                            {% for item in imageList %}
+                                                <div class="4u"><span class="image fit">
+                                                        <img src="{{ url_for('static', filename='images/' + cat + '/FRAMES/' + item)}}" alt="" />
+                                                </span></div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+							</div>
+
+						</div>
+				</div>
+			</section>
+		    {% include 'tmpFooter.html' %}
+            {% include 'tmpHeaderJS.html' %}
+
+	</body>
+</html>
